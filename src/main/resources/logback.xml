@@ -1,4 +1,4 @@
-<configuration debug="true">
+<configuration>
 
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
@@ -9,11 +9,7 @@
 		</encoder>
 	</appender>
 	
-	<logger name="pt.ist" level="TRACE">
+	<logger name="pt.ist" level="INFO">
 		<appender-ref ref="STDOUT" />
 	</logger>
-	<logger name="module" level="INFO">
-		<appender-ref ref="STDOUT" />
-	</logger>
-
 </configuration>
