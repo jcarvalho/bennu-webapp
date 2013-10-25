@@ -20,6 +20,11 @@
         <version.pt.ist.bennu.bennu-admin>2.0.0-SNAPSHOT</version.pt.ist.bennu.bennu-admin>
         <version.pt.ist.bennu.bennu-theme>1.0-SNAPSHOT</version.pt.ist.bennu.bennu-theme>
         <version.pt.ist.bennu.dot-theme>1.0-SNAPSHOT</version.pt.ist.bennu.dot-theme>
+	    <version.pt.ist.fenix.framework>2.4.0-SNAPSHOT</version.pt.ist.fenix.framework>
+        <version.pt.ist.ff.maven.plugin>2.4.0-SNAPSHOT</version.pt.ist.ff.maven.plugin>
+
+        <fenix.framework.codeGeneratorClassName>pt.ist.fenixframework.backend.neo4j.Neo4jCodeGenerator</fenix.framework.codeGeneratorClassName>
+        <fenix.framework.backend>neo4j</fenix.framework.backend>
     </properties>
     <build>
         <plugins>
@@ -50,6 +55,11 @@
                     </systemProperties>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>pt.ist</groupId>
+                <artifactId>dml-maven-plugin</artifactId>
+                <version>2.4.0-SNAPSHOT</version>
+            </plugin>
         </plugins>
     </build>
 
@@ -69,6 +79,17 @@
             <artifactId>bennu-client</artifactId>
             <version>${version.pt.ist.bennu.bennu-admin}</version>
         </dependency>
+                <dependency>
+            <groupId>pt.ist.bennu</groupId>
+            <artifactId>bennu-search</artifactId>
+            <version>${version.pt.ist.bennu.bennu-admin}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.lucene</groupId>
+                    <artifactId>lucene-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <dependency>
             <groupId>pt.ist.bennu</groupId>
             <artifactId>dot-theme</artifactId>
@@ -83,6 +104,11 @@
             <groupId>pt.ist.bennu</groupId>
             <artifactId>bennu-renderers-example</artifactId>
             <version>3.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${version.junit.junit}</version>
         </dependency>
         <!--<dependency> <groupId>pt.ist.bennu</groupId> <artifactId>bennu-vaadin-example</artifactId> <version>2.0.0-SNAPSHOT</version> 
             </dependency> -->
