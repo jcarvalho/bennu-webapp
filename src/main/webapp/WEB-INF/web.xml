@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     <servlet>
                 <servlet-name>action</servlet-name>
-                <servlet-class>pt.ist.bennu.core.presentationTier.servlets.ActionServletWrapper</servlet-class>
+                <servlet-class>org.fenixedu.bennu.core.presentationTier.servlets.ActionServletWrapper</servlet-class>
                 <load-on-startup>2</load-on-startup>
         </servlet>
         <!-- Servlet Mapping -->
